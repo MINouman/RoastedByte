@@ -16,6 +16,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://roastedbyte.com"),
   title: "RoastedByte | Engineering That Removes Friction",
   description:
     "A premium engineering studio specializing in automation, APIs, machine learning, and data systems. We build systems that scale.",
