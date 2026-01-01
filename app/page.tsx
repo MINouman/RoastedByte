@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import NetlifyFormHelper from "@/components/NetlifyFormHelper";
+
 import Services from "@/components/Services";
 import Process from "@/components/Process";
 import WhyUs from "@/components/WhyUs";
@@ -28,7 +28,7 @@ export default function Home() {
         <FeatureHighlight />
         <ScaleSection />
         <CTA />
-        <NetlifyFormHelper />
+
       </main>
 
       <Footer />
