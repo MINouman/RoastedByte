@@ -75,7 +75,7 @@ export default function Hero() {
                             { value: "12+", label: "Projects Delivered" },
                             { value: "99.9%", label: "Uptime Guaranteed" },
                             { value: "24/7", label: "Support Available" },
-                            { value: "2+", label: "Years Experience" }
+                            { value: "1+", label: "Year Experience" }
                         ].map((stat, index) => (
                             <div key={index} className="text-center">
                                 <div className="font-heading text-2xl font-bold text-white md:text-3xl">

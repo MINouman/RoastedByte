@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import ContactModal from "@/components/ContactModal";
 
 // Job data (without salaries)
 const jobs = [
@@ -373,6 +374,7 @@ function JobCard({ job, index, onApply }: { job: typeof jobs[0]; index: number; 
 
 export default function CareersPage() {
     const [selectedJob, setSelectedJob] = useState<string | null>(null);
+    const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
     return (
         <div className="min-h-screen bg-bg-primary font-sans text-text-primary selection:bg-accent-coffee selection:text-black">
@@ -460,15 +462,15 @@ export default function CareersPage() {
                     <p className="mb-8 text-text-muted">
                         We&apos;re always looking for talented individuals. Send us your resume and we&apos;ll reach out when something opens up.
                     </p>
-                    <a
-                        href="mailto:hello@roastedbyte.com"
+                    <button
+                        onClick={() => setIsContactModalOpen(true)}
                         className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition-transform hover:scale-105"
                     >
                         Contact Us
                         <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
-                    </a>
+                    </button>
                 </div>
             </section>
 
@@ -486,6 +488,11 @@ export default function CareersPage() {
                 isOpen={!!selectedJob}
                 onClose={() => setSelectedJob(null)}
                 jobTitle={selectedJob || ""}
+            />
+
+            <ContactModal
+                isOpen={isContactModalOpen}
+                onClose={() => setIsContactModalOpen(false)}
             />
 
             {/* Global styles for animations */}
